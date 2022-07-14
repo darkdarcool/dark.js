@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '6.0.0' // THIS IS NEEDED
+
+}
+
+group 'com.darkdarcool'
+version ''
+mainClassName = "com.darkdarcool.Main"
+archivesBaseName = "darkjs"
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // implementation group: 'com.eclipsesource.j2v8', name: 'j2v8', version: '1.0'
+    implementation group: 'com.eclipsesource.j2v8', name: 'j2v8_win32_x86_64', version: '4.6.0'
+
+}
+
+test {
+    useJUnitPlatform()
+}
