@@ -1,5 +1,4 @@
 package com.darkdarcool;
-import com.darkdarcool.functions.Print;
 import com.darkdarcool.utils.Read;
 
 public class Main {
