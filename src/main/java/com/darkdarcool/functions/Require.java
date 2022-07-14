@@ -7,6 +7,8 @@ import com.darkdarcool.utils.Read;
 import com.eclipsesource.v8.*;
 import com.eclipsesource.v8.utils.V8ObjectUtils;
 
+import java.io.File;
+
 public class Require implements JavaCallback {
     @Override
     public Object invoke(V8Object receiver, V8Array parameters) {
@@ -28,12 +30,8 @@ public class Require implements JavaCallback {
         return exports;
     }
     private String reloadDirectoryPath(String fullPath) {
-        String[] split = fullPath.split("\\\\");
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < split.length - 1; i++) {
-            sb.append(split[i]);
-            sb.append("\\");
-        }
-        return sb.toString();
+        File file = new File(fullPath);
+        String dir = file.getParent();
+        return dir;
     }
 }
