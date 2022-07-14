@@ -25,7 +25,7 @@ replay_pid*
 
 # Gradle
 /.gradle/
-/.gradle/*
+/.gradle/wrapper/
 
 # Build stuff
 /build/
