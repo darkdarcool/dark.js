@@ -1,19 +1,18 @@
 package com.darkdarcool.utils;
 
+import java.io.IOException;
+
 public class Read {
-    public static String readFile(String fileName) {
+    public static String readFile(String fileName) throws IOException {
         StringBuilder sb = new StringBuilder();
-        try {
-            java.io.BufferedReader br = new java.io.BufferedReader(new java.io.FileReader(fileName));
-            String line;
-            while ((line = br.readLine()) != null) {
-                sb.append(line);
-                sb.append("\n");
-            }
-            br.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+        java.io.BufferedReader br = new java.io.BufferedReader(new java.io.FileReader(fileName));
+        String line;
+        while ((line = br.readLine()) != null) {
+            sb.append(line);
+            sb.append("\n");
         }
+        br.close();
+
         return sb.toString();
     }
 

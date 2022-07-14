@@ -8,7 +8,13 @@ public class Main {
         if (task == "run") {
             Engine engine = new Engine(Read.getDir(), cmdLine.GetTaskData());
             Registers.register(engine);
-            engine.run(Read.readFile("index.js"));
+            String fileContent = "";
+            try {
+                fileContent = Read.readFile(Read.getFullFilePath(cmdLine.GetTaskData()));
+            } catch (Exception e) {
+                System.out.println("File not found");
+            }
+            engine.run(fileContent);
         }
     }
 }

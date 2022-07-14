@@ -17,7 +17,15 @@ public class Require implements JavaCallback {
         String fullFilePath = dir + "\\" + fileName;
         Engine engine = new Engine(reloadDirectoryPath(fullFilePath), fileName);
         Registers.register(engine);
-        V8 data = engine.run(Read.readFile(fullFilePath));
+        String fileContent;
+        try {
+            fileContent = Read.readFile(fullFilePath);
+        } catch (Exception e) {
+            System.out.println("Requested file " + fullFilePath + " was not found. Also lets make an error for this later ngl");
+            System.exit(0);
+            return null;
+        }
+        V8 data = engine.run(fileContent);
         V8Object module = data.getObject("module");
         Object exports;
         int type = module.getType("exports");
