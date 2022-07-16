@@ -1,4 +1,4 @@
-package com.darkdarcool;
+package com.darkdarcool.dark;
 
 public class CommandLine {
     private String[] args;

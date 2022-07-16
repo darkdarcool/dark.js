@@ -1,0 +1,1 @@
+console.log("This is a file that 100% should log a message into the console");

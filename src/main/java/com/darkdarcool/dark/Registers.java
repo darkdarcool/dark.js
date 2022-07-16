@@ -1,7 +1,8 @@
-package com.darkdarcool;
+package com.darkdarcool.dark;
 
-import com.darkdarcool.functions.*;
-import com.darkdarcool.functions.console.*;
+import com.darkdarcool.dark.functions.Require;
+import com.darkdarcool.dark.functions.console.*;
+import com.darkdarcool.dark.functions.console.*;
 import com.eclipsesource.v8.*;
 
 public class Registers {
@@ -17,6 +18,11 @@ public class Registers {
 
         V8Object console = new V8Object(engine.runtime);
         console.add("log", new V8Function(engine.runtime, new Log()));
+        console.add("assert", new V8Function(engine.runtime, new Assert()));
+        console.add("clear", new V8Function(engine.runtime, new Clear()));
+        console.add("count", new V8Function(engine.runtime, new Count()));
+        console.add("resetCount", new V8Function(engine.runtime, new ResetCount()));
+        console.add("prompt", new V8Function(engine.runtime, new Prompt()));
         engine.runtime.add("console", console);
     }
 }

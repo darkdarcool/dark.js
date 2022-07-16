@@ -7,10 +7,14 @@ plugins {
 
 group 'com.darkdarcool'
 version ''
-mainClassName = "com.darkdarcool.Main"
+mainClassName = "com.darkdarcool.dark.Main"
 archivesBaseName = "darkjs"
 repositories {
     mavenCentral()
+}
+
+run {
+    standardInput = System.in
 }
 
 dependencies {
@@ -22,3 +26,4 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+

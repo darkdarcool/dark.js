@@ -1,11 +1,9 @@
-package com.darkdarcool.functions;
+package com.darkdarcool.dark.functions;
 
-import com.darkdarcool.Engine;
-import com.darkdarcool.Registers;
-import com.darkdarcool.RuntimeRef;
-import com.darkdarcool.utils.Read;
+import com.darkdarcool.dark.Engine;
+import com.darkdarcool.dark.Registers;
+import com.darkdarcool.dark.utils.Read;
 import com.eclipsesource.v8.*;
-import com.eclipsesource.v8.utils.V8ObjectUtils;
 
 import java.io.File;
 
