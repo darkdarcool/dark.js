@@ -11,9 +11,7 @@ public class Read {
         File file = new File(fileName);
 
         try (Stream linesStream = Files.lines(file.toPath())) {
-            linesStream.forEach(line -> {
-                sb.append(line);
-            });
+            linesStream.forEach(sb::append);
         }
 
         return sb.toString();
